@@ -13,12 +13,21 @@ const userInput = `Ааа! Буква 'а' дублируется в БД!`
 // Код ниже работает таким образом, что ВСЕ буквы как новые добавляются в БД.
 // Это приводит к дублированию записей
 
-/* async function run(text) {
-    for (const char of text) {
-        const charIdx = await charAPI.add(char)
-        console.log(JSON.stringify({ char: charIdx }))
-    }
-} */
+// async function run(text) {
+//     for (const char of text) {
+//         const charIdx = await charAPI.add(char)
+//         console.log(JSON.stringify({ [char]: charIdx }))
+//     }
+// }
+
+
+// {"А":0}
+// {"а":1}
+// {"а":1}
+// {"!":2}
+// {" ":3}
+// {"Б":4}
+// {"у":5}
 
 // Задача
 // Добиться такой же записи букв в "БД" как для кода с FOR, но без FOR
