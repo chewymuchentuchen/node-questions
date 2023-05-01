@@ -1,0 +1,21 @@
+{
+  "name": "fds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "npx eslint ./**/*.js --fix"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
