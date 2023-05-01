@@ -11,21 +11,24 @@ module.exports = ({ storage = [], ...rest }) => {
     }
 
     function API() {
-        this.storage = storage
-
-        const that = this
+        // приватные свойства
+        const db = storage
 
         // приватные методы, выполняющие асинхронную работу
-        async function putOne(data) {
+        async function putOne(char) {
             await emulateAsyncWork()
-            return that.storage.push(data) - 1 // индекс только что добавленного элемента
+            return db.push(char) - 1 // индекс только что добавленного элемента
         }
 
-        async function getOne(data) {
+        async function getOne(char) {
             await emulateAsyncWork()
+            let id = db.indexOf(char)
+            if (id > -1) {
+                return id
+            }
+            id = await putOne(char)
 
-            const foundIdx = that.storage.indexOf(data)
-            return foundIdx > -1 ? foundIdx : putOne(data)
+            return id
         }
 
         // публичные методы
